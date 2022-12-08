@@ -17,7 +17,6 @@
 ## Alligator API
 
 * [https://leiza-rse.github.io/api-docs/alligator/](https://leiza-rse.github.io/api-docs/alligator/)
-* [Link text Here](https://link-url-here.org)
 
 ## re3dragon API
 
