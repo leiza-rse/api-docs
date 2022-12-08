@@ -2,7 +2,7 @@
 
 ## GET list of objects by search
 
-`GET http://host/nopi/rest/searchobj/`
+`GET nopi/rest/searchobj/`
 
 **Description**
 
@@ -32,9 +32,9 @@ JSONArray
 
 ```json
 {
-	"thumbnail": {},
 	"id": {},
 	"label": {},
+	"thumbnail": {}
 }
 ```
 
@@ -51,3 +51,51 @@ JSONArray
   * http://host/nopi/rest/searchobj?q=4525,4514&mode=OR
 * GET objects described with Shell first (4525) and Mortice-and-tennon (4514)
   * http://host/nopi/rest/searchobj?q=4525,4514&mode=AND
+
+## GET list of entities for a group of objects
+
+`GET nopi/rest/searchitems/`
+
+**Description**
+
+returns a list of entities in a look-up-table that matches to a list ob object IDs
+
+**Requires authentication**
+
+none
+
+**Parameters**
+
+* **lut** *(optional)* — [String] {lut_objecttype;lut_material;lut_technique;lut_culture;lut_person;lut_depository}.
+* **list** *(optional)* — [String Comma Separated] {obj1,obj2,...}.
+
+**Headers**
+
+`Accept: application/json;charset=UTF-8`
+
+`Accept-Encoding: *` `Accept-Encoding: gzip`
+
+**Return format**
+
+JSONArray
+
+**Response**
+
+```json
+{
+	"id": {},
+	"count": {},
+	"label_en": {},
+	"label_de": {}
+}
+```
+
+**Response Codes**
+
+* *200 OK* — ok.
+* *500 Internal Server Error* — server error.
+
+**Examples**
+
+* GET object types from objects 200001-200005
+  * http://host/nopi/rest/searchitems?lut=lut_objecttype&list=200001,200002,200003,200004,200005
