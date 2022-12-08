@@ -116,3 +116,107 @@ JSONArray
 
 * GET object 32f176e7-2baa-4801-87f6-bf62e37b1458
   * http://host/arspi/rest/objects/ars3do:32f176e7-2baa-4801-87f6-bf62e37b1458?mode=label
+
+## GET list of features
+
+`GET arspi/rest/features/`
+
+**Description**
+
+returns a list of features that belongs to an object
+
+**Requires authentication**
+
+none
+
+**Parameters**
+
+* **q** *(optional)* — [String] ARS3D Object ID with PREFIX ars3do:
+
+**Headers**
+
+`Accept: application/json;charset=UTF-8`
+
+`Accept-Encoding: *` `Accept-Encoding: gzip`
+
+**Return format**
+
+JSONArray
+
+**Response**
+
+```json
+{
+	"features": [
+		"f": String,
+		"label": String,
+		"typelabel": String,
+		"manufacturinglabel": String,
+		"date": String,
+		"geom": String,
+		"observations": []
+	],
+	"featuregroups": [],
+	"interpretations": []
+}
+```
+
+**Response Codes**
+
+* *200 OK* — ok.
+* *500 Internal Server Error* — server error.
+
+**Examples**
+
+* GET feature list of object 32f176e7-2baa-4801-87f6-bf62e37b1458
+  * http://host/arspi/rest/features?q=ars3do:32f176e7-2baa-4801-87f6-bf62e37b1458
+
+## GET feature by ID
+
+`GET arspi/rest/features/:id`
+
+**Description**
+
+returns a ARS3D feature
+
+**Requires authentication**
+
+none
+
+**Parameters**
+
+* **id** *(mendatory)* — [String] ARS3D Feature ID with PREFIX ars3df:
+
+**Headers**
+
+`Accept: application/json;charset=UTF-8`
+
+`Accept-Encoding: *` `Accept-Encoding: gzip`
+
+**Return format**
+
+JSONArray
+
+**Response**
+
+```json
+{
+	"f": String,
+	"label": String,
+	"typelabel": String,
+	"manufacturinglabel": String,
+	"date": String,
+	"geom": String,
+	"observations": []
+}
+```
+
+**Response Codes**
+
+* *200 OK* — ok.
+* *500 Internal Server Error* — server error.
+
+**Examples**
+
+* GET feature 41d92517-5e73-4847-aca2-b70cf3d86d54
+  * http://host/arspi/rest/features/ars3df:41d92517-5e73-4847-aca2-b70cf3d86d54
