@@ -1,4 +1,4 @@
-# *ARS3D API - Documentation*
+# *NoPI - Documentation*
 
 ## GET status
 
