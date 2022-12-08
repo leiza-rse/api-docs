@@ -220,3 +220,50 @@ JSONArray
 
 * GET feature 41d92517-5e73-4847-aca2-b70cf3d86d54
   * http://host/arspi/rest/features/ars3df:41d92517-5e73-4847-aca2-b70cf3d86d54
+
+## GET fixed values
+
+`GET arspi/rest/fixedvalues/:id`
+
+**Description**
+
+returns value list for a domain
+
+**Requires authentication**
+
+none
+
+**Parameters**
+
+* **id** *(mendatory)* — [String] {observationclasses;conditions;residences;findspots;manufacturingfeaturetypes;shapes;featuretypes;periods;materials;activities;objecttypes;conditiontypes;manufacturingobjecttypes}
+
+**Headers**
+
+`Accept: application/json;charset=UTF-8`
+
+`Accept-Encoding: *` `Accept-Encoding: gzip`
+
+**Return format**
+
+JSONArray
+
+**Response**
+
+```json
+{
+	"id: String,
+	"label": String
+}
+```
+
+**Response Codes**
+
+* *200 OK* — ok.
+* *500 Internal Server Error* — server error.
+
+**Examples**
+
+* GET shapes
+  * http://host/arspi/rest/fixedvalues/shapes
+* GET materials
+  * http://host/arspi/rest/fixedvalues/materials
