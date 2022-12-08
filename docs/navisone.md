@@ -32,9 +32,9 @@ JSONArray
 
 ```json
 {
-	"id": {},
-	"label": {},
-	"thumbnail": {}
+	"id": String,
+	"label": String,
+	"thumbnail": String
 }
 ```
 
@@ -83,10 +83,10 @@ JSONArray
 
 ```json
 {
-	"id": {},
-	"count": {},
-	"label_en": {},
-	"label_de": {}
+	"id": String,
+	"count": String,
+	"label_en": String,
+	"label_de": String
 }
 ```
 
@@ -99,3 +99,61 @@ JSONArray
 
 * GET object types from objects 200001-200005
   * http://host/nopi/rest/searchitems?lut=lut_objecttype&list=200001,200002,200003,200004,200005
+
+## GET object by ID
+
+`GET nopi/rest/objects/:id`
+
+**Description**
+
+returns a NAVIS object
+
+**Requires authentication**
+
+none
+
+**Parameters**
+
+* **id** *(mendatory)* — [String] Object ID.
+
+**Headers**
+
+`Accept: application/json;charset=UTF-8`
+
+`Accept-Encoding: *` `Accept-Encoding: gzip`
+
+**Return format**
+
+JSONArray
+
+**Response**
+
+```json
+{
+	"id": String,
+	"uri": String,
+	"name": String,
+	"features_count": Integer,
+	"hastype": Integer,
+	"metadata" : {},
+	"image_primary" : {},
+	"images" : {},
+	"features" : {},
+	"datings" : {},
+	"keywords" : {},
+	"keys_list" : {},
+	"keywords_list" : {},
+	"images" : {},
+	"literature" : {}
+}
+```
+
+**Response Codes**
+
+* *200 OK* — ok.
+* *500 Internal Server Error* — server error.
+
+**Examples**
+
+* GET object 200232
+  * http://host/nopi/rest/objects/200232
