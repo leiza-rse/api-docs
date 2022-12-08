@@ -1,5 +1,13 @@
 # *NoPI - Documentation*
 
+* Developers:
+  * family-names: Thiery
+  * given-names: Florian
+  * orcid: https://orcid.org/0000-0002-3246-3531
+  * affiliation: RGZM, Mainz, Germany
+* Software:
+  * MIT License
+
 ## GET list of objects by search
 
 `GET nopi/rest/searchobj/`
