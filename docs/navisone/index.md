@@ -157,3 +157,95 @@ JSONArray
 
 * GET object 200232
   * http://host/nopi/rest/objects/200232
+
+## GET key list for objects
+
+`GET nopi/rest/keysobjects`
+
+**Description**
+
+returns a list of keys used for objects
+
+**Requires authentication**
+
+none
+
+**Parameters**
+
+none
+
+**Headers**
+
+`Accept: application/json;charset=UTF-8`
+
+`Accept-Encoding: *` `Accept-Encoding: gzip`
+
+**Return format**
+
+JSONArray
+
+**Response**
+
+```json
+{
+	"id": String,
+	"en": String,
+	"de": String
+}
+```
+
+**Response Codes**
+
+* *200 OK* — ok.
+* *500 Internal Server Error* — server error.
+
+**Examples**
+
+* GET key list for objects
+  * http://host/nopi/rest/keysobjects
+
+## GET key list for freatures
+
+`GET nopi/rest/keysfeatures`
+
+**Description**
+
+returns a list of keys used for features
+
+**Requires authentication**
+
+none
+
+**Parameters**
+
+none
+
+**Headers**
+
+`Accept: application/json;charset=UTF-8`
+
+`Accept-Encoding: *` `Accept-Encoding: gzip`
+
+**Return format**
+
+JSONArray
+
+**Response**
+
+```json
+{
+	"id": String,
+	"en": String,
+	"de": String
+}
+```
+
+**Response Codes**
+
+* *200 OK* — ok.
+* *500 Internal Server Error* — server error.
+
+**Examples**
+
+* GET key list for objects
+  * http://host/nopi/rest/keysfeatures
