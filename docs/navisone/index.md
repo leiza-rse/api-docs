@@ -1,12 +1,12 @@
 # *NoPI - Documentation*
 
-## GET status
+## GET list of objects by search
 
-` GET http://localhost:8084/ars3dapi/`
+`GET nopi/rest/searchobj/`
 
 **Description**
 
-returns metadata of the API and maven configs.
+returns a list of objects that matches keys or a substring
 
 **Requires authentication**
 
@@ -14,7 +14,9 @@ none
 
 **Parameters**
 
-none
+* **qs** *(optional)* — [String] searchstring.
+* **q** *(optional)* — [String Comma Separated] {obj1,obj2,...}.
+* **mode** *(optional)* — [String] {AND;OR}.
 
 **Headers**
 
@@ -24,17 +26,15 @@ none
 
 **Return format**
 
-JSON Object
+JSONArray
 
 **Response**
 
 ```json
 {
-	"git": {},
-	"database-connection": {},
-	"maven": {},
-	"project": {},
-	"war": {}
+	"id": String,
+	"label": String,
+	"thumbnail": String
 }
 ```
 
@@ -45,15 +45,20 @@ JSON Object
 
 **Examples**
 
-* https://java-dev.rgzm.de/ars3dapi
+* GET objects including "terra" in the label
+  * http://host/nopi/rest/searchobj?qs=terra
+* GET objects described with Shell first (4525) or Mortice-and-tennon (4514)
+  * http://host/nopi/rest/searchobj?q=4525,4514&mode=OR
+* GET objects described with Shell first (4525) and Mortice-and-tennon (4514)
+  * http://host/nopi/rest/searchobj?q=4525,4514&mode=AND
 
-## GET features of an object
+## GET list of entities for a group of objects
 
-` GET http://localhost:8084/spi/features`
+`GET nopi/rest/searchitems/`
 
 **Description**
 
-returns all features, featuregroups and scenes of an object
+returns a list of entities in a look-up-table that matches to a list ob object IDs
 
 **Requires authentication**
 
@@ -61,8 +66,8 @@ none
 
 **Parameters**
 
-* **q** *(required)* — [String] URI with prefix.
-* **type** *(optional)* — [String] {feature;featuregroup;scene}.
+* **lut** *(optional)* — [String] {lut_objecttype;lut_material;lut_technique;lut_culture;lut_person;lut_depository}.
+* **list** *(optional)* — [String Comma Separated] {obj1,obj2,...}.
 
 **Headers**
 
@@ -72,29 +77,16 @@ none
 
 **Return format**
 
-JSON Object
+JSONArray
 
 **Response**
 
 ```json
 {
-	"features": [],
-	"featuregroups": [],
-	"scenes": []
-}
-```
-
-```json
-{
-	"date": "2020-02-26T11:37:12.493+01:00",
-	"process": "ars3dgp:1582713432493",
-	"f": "ars3df:fbe04333-d501-4058-98f0-a990b9eba0ce",
-	"observations": [],
-	"processstate": "test",
-	"typelabel": "Applique (positive)",
-	"label": "asdsadasd",
-	"type": "ars:FeatureType_Applique",
-	"geom": "'{'selectionpolygon':[[-36.845232983550574,34.107175427304725,42.513339517633334],[4.0789305986819855,35.148786891432174,37.58398055446757],[-61.680198796342474,-9.841206777724546,49.94657957211528],[-2.9573409885244466,-14.347221598928389,32.756039423764086]],'crackpolygons':[],'edgepolygons':[],'overlappolygons':[],'kinkpolygons':[],'unnamed6polygons':[],'unnamed7polygons':[],'unnamed8polygons':[],'unnamed9polygons':[],'unnamed10polygons':[],'visualpolygon':[],'visualscenepolygon':[]}'"
+	"id": String,
+	"count": String,
+	"label_en": String,
+	"label_de": String
 }
 ```
 
@@ -105,16 +97,16 @@ JSON Object
 
 **Examples**
 
-* all elements: https://java-dev.rgzm.de/ars3dapi/features?q=ars3do:57052b95-ca87-4d40-b59c-7c4128f78b23
-* features: https://java-dev.rgzm.de/ars3dapi/features?q=ars3do:57052b95-ca87-4d40-b59c-7c4128f78b23&type=feature
+* GET object types from objects 200001-200005
+  * http://host/nopi/rest/searchitems?lut=lut_objecttype&list=200001,200002,200003,200004,200005
 
-## GET feature by ID
+## GET object by ID
 
-` GET http://localhost:8084/spi/features/{id}`
+`GET nopi/rest/objects/:id`
 
 **Description**
 
-returns a feature by its URI
+returns a NAVIS object
 
 **Requires authentication**
 
@@ -122,7 +114,7 @@ none
 
 **Parameters**
 
-* **id** *(required)* — [String] URI with prefix.
+* **id** *(mendatory)* — [String] Object ID.
 
 **Headers**
 
@@ -132,21 +124,27 @@ none
 
 **Return format**
 
-JSON Object
+JSONArray
 
 **Response**
 
 ```json
 {
-	"date": "2020-02-26T11:37:12.493+01:00",
-	"process": "ars3dgp:1582713432493",
-	"f": "ars3df:fbe04333-d501-4058-98f0-a990b9eba0ce",
-	"observations": [],
-	"processstate": "test",
-	"typelabel": "Applique (positive)",
-	"label": "asdsadasd",
-	"type": "ars:FeatureType_Applique",
-	"geom": "'{'selectionpolygon':[[-36.845232983550574,34.107175427304725,42.513339517633334],[4.0789305986819855,35.148786891432174,37.58398055446757],[-61.680198796342474,-9.841206777724546,49.94657957211528],[-2.9573409885244466,-14.347221598928389,32.756039423764086]],'crackpolygons':[],'edgepolygons':[],'overlappolygons':[],'kinkpolygons':[],'unnamed6polygons':[],'unnamed7polygons':[],'unnamed8polygons':[],'unnamed9polygons':[],'unnamed10polygons':[],'visualpolygon':[],'visualscenepolygon':[]}'"
+	"id": String,
+	"uri": String,
+	"name": String,
+	"features_count": Integer,
+	"hastype": Integer,
+	"metadata" : {},
+	"image_primary" : {},
+	"images" : {},
+	"features" : {},
+	"datings" : {},
+	"keywords" : {},
+	"keys_list" : {},
+	"keywords_list" : {},
+	"images" : {},
+	"literature" : {}
 }
 ```
 
@@ -157,6 +155,5 @@ JSON Object
 
 **Examples**
 
-* https://java-dev.rgzm.de/ars3dapi/features/ars3df:fbe04333-d501-4058-98f0-a990b9eba0ce
-
-> TODO /objects
+* GET object 200232
+  * http://host/nopi/rest/objects/200232
