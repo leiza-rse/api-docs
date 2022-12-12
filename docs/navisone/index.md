@@ -10,7 +10,7 @@
 
 ## GET list of objects by search
 
-`GET nopi/rest/searchobj/`
+`GET navis/rest/searchobj/`
 
 **Description**
 
@@ -54,15 +54,15 @@ JSONArray
 **Examples**
 
 * GET objects including "terra" in the label
-  * http://host/nopi/rest/searchobj?qs=terra
+  * http://host/navis/rest/searchobj?qs=terra
 * GET objects described with Shell first (4525) or Mortice-and-tennon (4514)
-  * http://host/nopi/rest/searchobj?q=4525,4514&mode=OR
+  * http://host/navis/rest/searchobj?q=4525,4514&mode=OR
 * GET objects described with Shell first (4525) and Mortice-and-tennon (4514)
-  * http://host/nopi/rest/searchobj?q=4525,4514&mode=AND
+  * http://host/navis/rest/searchobj?q=4525,4514&mode=AND
 
 ## GET list of entities for a group of objects
 
-`GET nopi/rest/searchitems/`
+`GET navis/rest/searchitems/`
 
 **Description**
 
@@ -106,11 +106,11 @@ JSONArray
 **Examples**
 
 * GET object types from objects 200001-200005
-  * http://host/nopi/rest/searchitems?lut=lut_objecttype&list=200001,200002,200003,200004,200005
+  * http://host/navis/rest/searchitems?lut=lut_objecttype&list=200001,200002,200003,200004,200005
 
 ## GET object by ID
 
-`GET nopi/rest/objects/:id`
+`GET navis/rest/objects/:id`
 
 **Description**
 
@@ -164,11 +164,11 @@ JSONArray
 **Examples**
 
 * GET object 200232
-  * http://host/nopi/rest/objects/200232
+  * http://host/navis/rest/objects/200232
 
 ## GET key list for objects
 
-`GET nopi/rest/keysobjects`
+`GET navis/rest/keysobjects`
 
 **Description**
 
@@ -210,11 +210,11 @@ JSONArray
 **Examples**
 
 * GET key list for objects
-  * http://host/nopi/rest/keysobjects
+  * http://host/navis/rest/keysobjects
 
 ## GET key list for freatures
 
-`GET nopi/rest/keysfeatures`
+`GET navis/rest/keysfeatures`
 
 **Description**
 
@@ -256,4 +256,4 @@ JSONArray
 **Examples**
 
 * GET key list for objects
-  * http://host/nopi/rest/keysfeatures
+  * http://host/navis/rest/keysfeatures
