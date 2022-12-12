@@ -1,4 +1,4 @@
-# *NoPI - Documentation*
+# *NAVIS API - Documentation*
 
 * Developers:
   * family-names: Thiery

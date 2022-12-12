@@ -1,4 +1,4 @@
-# *ARSPI - Documentation*
+# *ARS3D API - Documentation*
 
 * Developers:
   * family-names: Thiery
