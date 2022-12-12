@@ -10,7 +10,7 @@
 
 ## GET list of objects
 
-`GET arspi/rest/objects/`
+`GET ars3d/rest/objects/`
 
 **Description**
 
@@ -54,13 +54,13 @@ JSONArray
 **Examples**
 
 * GET object list
-  * http://host/arspi/rest/objects
+  * http://host/ars3d/rest/objects
 * GET objects including "erot" in the label
-  * http://host/arspi/rest/objects?q=erot
+  * http://host/ars3d/rest/objects?q=erot
 
 ## GET object by ID
 
-`GET arspi/rest/objects/:id`
+`GET ars3d/rest/objects/:id`
 
 **Description**
 
@@ -115,11 +115,11 @@ JSONArray
 **Examples**
 
 * GET object 32f176e7-2baa-4801-87f6-bf62e37b1458
-  * http://host/arspi/rest/objects/ars3do:32f176e7-2baa-4801-87f6-bf62e37b1458?mode=label
+  * http://host/ars3d/rest/objects/ars3do:32f176e7-2baa-4801-87f6-bf62e37b1458?mode=label
 
 ## GET list of features
 
-`GET arspi/rest/features/`
+`GET ars3d/rest/features/`
 
 **Description**
 
@@ -169,11 +169,11 @@ JSONArray
 **Examples**
 
 * GET feature list of object 32f176e7-2baa-4801-87f6-bf62e37b1458
-  * http://host/arspi/rest/features?q=ars3do:32f176e7-2baa-4801-87f6-bf62e37b1458
+  * http://host/ars3d/rest/features?q=ars3do:32f176e7-2baa-4801-87f6-bf62e37b1458
 
 ## GET feature by ID
 
-`GET arspi/rest/features/:id`
+`GET ars3d/rest/features/:id`
 
 **Description**
 
@@ -219,11 +219,11 @@ JSONArray
 **Examples**
 
 * GET feature 41d92517-5e73-4847-aca2-b70cf3d86d54
-  * http://host/arspi/rest/features/ars3df:41d92517-5e73-4847-aca2-b70cf3d86d54
+  * http://host/ars3d/rest/features/ars3df:41d92517-5e73-4847-aca2-b70cf3d86d54
 
 ## GET fixed values
 
-`GET arspi/rest/fixedvalues/:id`
+`GET ars3d/rest/fixedvalues/:id`
 
 **Description**
 
@@ -264,6 +264,6 @@ JSONArray
 **Examples**
 
 * GET shapes
-  * http://host/arspi/rest/fixedvalues/shapes
+  * http://host/ars3d/rest/fixedvalues/shapes
 * GET materials
-  * http://host/arspi/rest/fixedvalues/materials
+  * http://host/ars3d/rest/fixedvalues/materials
