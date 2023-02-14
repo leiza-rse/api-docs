@@ -5,12 +5,12 @@
     * family-names: Thiery
     * given-names: Florian
     * orcid: https://orcid.org/0000-0002-3246-3531
-    * affiliation: RGZM, Mainz, Germany
+    * affiliation: LEIZA, Mainz, Germany
   * Developer
     * family-names: Mees
     * given-names: Allard W.
     * orcid: https://orcid.org/0000-0002-7634-5342
-    * affiliation: RGZM, Mainz, Germany
+    * affiliation: LEIZA, Mainz, Germany
 * Software:
   * MIT License
 

@@ -4,7 +4,7 @@
   * family-names: Thiery
   * given-names: Florian
   * orcid: https://orcid.org/0000-0002-3246-3531
-  * affiliation: RGZM, Mainz, Germany
+  * affiliation: LEIZA, Mainz, Germany
 * Software:
   * MIT License
 
@@ -56,7 +56,7 @@ JSONArray
 **Examples**
 
 * GET Getty AAT Concept 300262907
-  * http://host/arspi/rest/item?uri=http://vocab.getty.edu/aat/300262907
+  * http://host/re3dragon/rest/item?uri=http://vocab.getty.edu/aat/300262907
 
 ## GET remote item by search
 
@@ -108,7 +108,7 @@ JSONArray
 **Examples**
 
 * GET items from Getty AAT related to religion
-  * http://host/arspi/rest/search?q=religion&repo=gettyaat
+  * http://host/re3dragon/rest/search?q=religion&repo=gettyaat
 
 ## GET remote item by ids
 
@@ -160,7 +160,7 @@ JSONArray
 **Examples**
 
 * GET items from Getty AAT by IDs 300262907 and 300178739
-  * http://host/arspi/rest/items?ids=http://vocab.getty.edu/aat/300262907,http://vocab.getty.edu/aat/300178739
+  * http://host/re3dragon/rest/items?ids=http://vocab.getty.edu/aat/300262907,http://vocab.getty.edu/aat/300178739
 
 ## GET draon lairs
 
@@ -212,4 +212,4 @@ JSONArray
 **Examples**
 
 * GET dragon lairs
-  * http://host/arspi/rest/lairs
+  * http://host/re3dragon/rest/lairs
